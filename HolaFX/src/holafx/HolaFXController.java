@@ -10,9 +10,11 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 
 /**
@@ -30,6 +32,10 @@ public class HolaFXController implements Initializable {
     private Rectangle rectangulo;
     @FXML
     private Slider slider;
+    @FXML
+    private ColorPicker selectColorRec;
+    @FXML
+    private Line linea;
 
     /**
      * Initializes the controller class.
@@ -52,6 +58,12 @@ public class HolaFXController implements Initializable {
     @FXML
     private void rotar(MouseEvent event) {
         rectangulo.setRotate(slider.getValue());
+    }
+
+    @FXML
+    private void CambiarColorRec(ActionEvent event) {
+        linea.setStroke(selectColorRec.getValue());
+        
     }
     
 }
