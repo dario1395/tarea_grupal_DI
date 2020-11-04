@@ -11,6 +11,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Rectangle;
 
 /**
  * FXML Controller class
@@ -23,6 +26,10 @@ public class HolaFXController implements Initializable {
     private Label theLabel;
     @FXML
     private Label nombreBoton;
+    @FXML
+    private Rectangle rectangulo;
+    @FXML
+    private Slider slider;
 
     /**
      * Initializes the controller class.
@@ -40,6 +47,11 @@ public class HolaFXController implements Initializable {
     @FXML
     private void botonNombre(ActionEvent event) {
         nombreBoton.setText("Borja, Darío y Ángel");
+    }
+
+    @FXML
+    private void rotar(MouseEvent event) {
+        rectangulo.setRotate(slider.getValue());
     }
     
 }
